@@ -1,0 +1,20 @@
+apiVersion: certmanager.k8s.io/v1alpha1
+kind: Certificate
+metadata:
+  name: doctorscare-in-tls
+spec:
+  secretName: doctorscare-in
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  commonName: doctorscare.in
+  dnsNames:
+    - doctorscare.in
+    - www.doctorscare.in
+  acme:
+    config:
+      - http01:
+          ingressClass: nginx
+        domains:
+          - doctorscare.in
+          - www.doctorscare.in
