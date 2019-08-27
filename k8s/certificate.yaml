@@ -10,11 +10,9 @@ spec:
   commonName: doctorscare.in
   dnsNames:
     - doctorscare.in
-    - www.doctorscare.in
   acme:
     config:
       - http01:
           ingressClass: nginx
         domains:
           - doctorscare.in
-          - www.doctorscare.in
